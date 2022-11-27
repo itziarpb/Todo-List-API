@@ -39,12 +39,12 @@ input{
 .xMark{
     font-size: 20px;
     width:7%;
-    display:none;
+    /* display:none; */
 
 }
-.xMarkVisible{
+/* .xMarkVisible{
     display:inline;
-}
+} */
 .counter{
     background-color: white;
     margin-left: 8%;
