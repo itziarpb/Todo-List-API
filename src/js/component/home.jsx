@@ -9,11 +9,13 @@ const Home = () => {
   useEffect(()=>{
     fetch('https://assets.breatheco.de/apis/fake/todos/user/itziarpb')
     .then((resp) => {
+        console.log(resp.ok)
         return resp.json();
     })
     .then((data) => {
-        setTasks(data);
-        setCounter(data.length);
+        if (data.length!=0){
+          setTasks(data),
+        setCounter(data.length)}
     })
      .catch(error => {console.log(error); });
   }, [])
@@ -22,7 +24,7 @@ const Home = () => {
     setInputValue(e.target.value);
   };
   const handleKeyDown = (event) => {
-    if (event.keyCode == 13) {
+    if ((event.keyCode == 13)&&(inputValue!="")) {
       const newValue={
         label: inputValue,
         done: false
@@ -30,8 +32,7 @@ const Home = () => {
       setTasks([...tasks, newValue]);
       setInputValue("");
       setCounter(counter +1);
-      console.log(tasks);
-
+      
       fetch('https://assets.breatheco.de/apis/fake/todos/user/itziarpb', {
         method: 'PUT', // or 'PUT'
         body: JSON.stringify(tasks), // data can be `string` or {object}!
@@ -41,15 +42,35 @@ const Home = () => {
       }).then(res => res.json())
       .catch(error => console.error('Error:', error))
       .then(response => console.log('Success:', response));
-
-
     }
   };
   const handleRemoveTask = (event) => {
     const newtask = tasks.filter((task) => task !== event);
     setTasks(newtask);
     setCounter(counter - 1);
+    fetch('https://assets.breatheco.de/apis/fake/todos/user/itziarpb', {
+      method: 'PUT', // or 'PUT'
+      body: JSON.stringify(tasks), // data can be `string` or {object}!
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
+    .catch(error => console.error('Error:', error))
+    .then(response => console.log('Success:', response));
   };
+  const handleDelete = () => {
+    setTasks([]);
+    setCounter(0);
+    fetch('https://assets.breatheco.de/apis/fake/todos/user/itziarpb', {
+      method: 'DELETE',
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
+    .catch(error => console.error('Error:', error))
+    .then(response => console.log('Success:', response));
+  }
+
   // const handleVisible= () => {
   //   setHidden("xMarkVisible");
   // }
@@ -89,6 +110,7 @@ const Home = () => {
       <div className="counter">{counter} items left</div>
       <div className="final1"></div>
       <div className="final2"></div>
+      <button type="button" class="btn btn-light" onClick={() => handleDelete()}>Restart List</button>
     </div>
   );
 };
