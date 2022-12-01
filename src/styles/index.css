@@ -1,80 +1,83 @@
-body {background-color: black;}
+body {
+  background-color: black;
+}
 .container {
-    background-color: rgb(243, 242, 242);
-    margin-left: 25%;
-    width:50%;
-    height:617px;
+  background-color: rgb(243, 242, 242);
+  margin-left: 25%;
+  width: 50%;
+  height: 617px;
 }
-.todos{
-    padding-top:2%;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 100px;
-    color: rgb(232, 182, 236);
-    text-align: center;
+.todos {
+  padding-top: 2%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 100px;
+  color: rgb(232, 182, 236);
+  text-align: center;
 }
 
-.list{
-    background-color: white;
-    margin-left: 8%;
-    margin-right: 9%;
-    margin-bottom: 0;
-    list-style:none;
-    border: 1px solid rgba(0, 0, 0, 0.137);
-    padding:0;
-    
+.list {
+  background-color: white;
+  margin-left: 8%;
+  margin-right: 9%;
+  margin-bottom: 0;
+  list-style: none;
+  border: 1px solid rgba(0, 0, 0, 0.137);
+  padding: 0;
 }
-input{
-    border: 0;
+input {
+  border: 0;
 }
-.list li{
-    border-bottom: 1px solid rgba(0, 0, 0, 0.137);
-    height:55px;
-    padding:12px;
-    padding-left: 40px;
-    display:flex;
+.list li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.137);
+  height: 55px;
+  padding: 12px;
+  padding-left: 40px;
+  display: flex;
 }
-.task{
-    width:93%;
+.task {
+  width: 93%;
 }
-.xMark{
-    font-size: 20px;
-    width:7%;
-    /* display:none; */
-
+.xMark {
+  font-size: 20px;
+  width: 7%;
+  display: none;
 }
-/* .xMarkVisible{
-    display:inline;
-} */
-.counter{
-    background-color: white;
-    margin-left: 8%;
-    margin-right: 9%;
-    border: 1px solid rgba(0, 0, 0, 0.137);
-    border-top: 0;;
-    padding:8px;
-    height:30px;
-    padding-left: 20px;
-    font-size:12px;
-    color: rgba(128, 128, 128, 0.445);
+.xMarkVisible {
+  display: inline;
 }
-.final1{
-    background-color: white;
-    margin-left: 9%;
-    margin-right: 10%;
-    height:5px;
-    border: 1px solid rgba(0, 0, 0, 0.137);
-    border-top: 0;
+.xMarkVisible:hover {
+  color: rgba(0, 0, 0, 0.425);
 }
-.final2{
-    background-color: white;
-    margin-left: 10%;
-    margin-right: 11%;
-    height:5px;
-    border: 1px solid rgba(0, 0, 0, 0.137);
-    border-top: 0;
+.counter {
+  background-color: white;
+  margin-left: 8%;
+  margin-right: 9%;
+  border: 1px solid rgba(0, 0, 0, 0.137);
+  border-top: 0;
+  padding: 8px;
+  height: 30px;
+  padding-left: 20px;
+  font-size: 12px;
+  color: rgba(128, 128, 128, 0.445);
 }
-.btn-light{
-    margin-top:5%;
-    margin-left: 40%;
-    border: 1px solid rgba(0, 0, 0, 0.137);
+.final1 {
+  background-color: white;
+  margin-left: 9%;
+  margin-right: 10%;
+  height: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.137);
+  border-top: 0;
+}
+.final2 {
+  background-color: white;
+  margin-left: 10%;
+  margin-right: 11%;
+  height: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.137);
+  border-top: 0;
+}
+.btn-light {
+  margin-top: 5%;
+  margin-left: 40%;
+  border: 1px solid rgba(0, 0, 0, 0.137);
 }
